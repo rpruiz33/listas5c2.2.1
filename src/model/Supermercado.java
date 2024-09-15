@@ -30,11 +30,11 @@ public class Supermercado {
 
 
 
-	public Supermercado(List<Producto> gondola, List<Carrito> lstCarrito, List<Cliente> lstCliente) {
+	public Supermercado() {
 		super();
-		this.gondola = gondola;
-		this.lstCarrito = lstCarrito;
-		this.lstCliente = lstCliente;
+		 this.gondola = new ArrayList<>();
+		this.lstCarrito = new ArrayList<>();
+		this.lstCliente = new ArrayList<>();
 	}
 
 
@@ -43,26 +43,28 @@ public class Supermercado {
 
 		int id = 0;
 		Producto p = null;
-		if (gondola == null) {
-			throw new Exception("La góndola no está inicializada");
-		}
-		for (int i = 0; i < gondola.size(); i++) {
-			if (gondola.get(i).getProducto().equals(producto)) {
-				throw new Exception("el producto ya existe");
+		boolean flag=false ;
+	
+			for (int i = 0; i < gondola.size(); i++) {
+				if (gondola.get(i).getProducto().equals(producto)) {
+					throw new Exception("el producto ya existe");
+				}
 			}
-
-		}
-		if (gondola.size() == 0) {
 			id = 1;
-		} else {
+		 		
+			if (gondola.size() >1) {
 			id = gondola.get(gondola.size() - 1).getIdProducto() + 1;
 
 		}
 		p = new Producto(id, producto, precio);
-		return gondola.add(p);
+		System.out.println(gondola.add(p));
+	
+	 flag=true ;
 
+			
+	return flag;
+	
 	}
-
 
 
 	public Producto traerProducto(int idProducto) {
@@ -151,7 +153,7 @@ public class Supermercado {
 		
 	}
 	
-	public boolean eliminarCarrtto(int idCarrito) throws Exception{
+	public boolean eliminarCarritto(int idCarrito) throws Exception{
 	
 	boolean flag=false;
 	Carrito c=null;
@@ -162,12 +164,30 @@ public class Supermercado {
 	return flag;
 	
 }
-	public boolean  modificarCarrito(int idCarrito,LocalDate fecha,LocalTime hora) {
-		
-		
-		
-		return ;
-		
-	}
+	
+	public boolean agregarCliente(Cliente c) {
+		int i=0;
+		boolean flag =false;
+		if (c==null) {
+			flag=false;
+		}
+		while (i<lstCliente.size()&& flag!=true ) {
+			if(lstCliente.get(i).equals(c.getIdCliente(), c.getCliente(), c.getDni(),c.getDireccion())){
+				flag=true;
+
+			}
+			i++;
+		}
+
+		if(flag==true) {
+			lstCliente.add(c);
+			flag=true;
+		}
+
+		return flag;
 }
+		
+		
+}
+	
 

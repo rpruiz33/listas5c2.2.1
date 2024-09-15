@@ -40,7 +40,8 @@ public Cliente(int idCliente, String cliente, long dni, String direccion) {
 	this.direccion = direccion;
 }
 
-
-
+public boolean equals(int idCliente,String Cliente,long dni,String direccion) {
+	return this.idCliente==idCliente && this.Cliente.contentEquals(Cliente)&& this.direccion.equals(direccion);
+}
 
 }

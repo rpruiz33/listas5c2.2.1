@@ -12,21 +12,24 @@ import model.Supermercado;
 public class Test {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Supermercado s = new Supermercado(null, null, null);
+		// TODO Auto-generated method stu
+		
+		Supermercado s = new Supermercado();
+		
 		Producto p = new Producto(1, "cafe", 23.2f);
 		ItemCarrito i = new ItemCarrito(1, p, 22);
 		Carrito c = new Carrito(1, LocalDate.of(2222, 02, 02), LocalTime.of(12, 12));
 		System.out.println(c.agregarItem(p, 1));
 		System.out.println(c.agregarItem(p, 1));
-
+		System.out.println("\ntamanio de gondola"+s.getGondola());
 		try {
 			System.out.println(s.agregaarProducto("yerba", 3));
 			System.out.println(s.agregaarProducto("fideos", 3));
+
 		} catch (Exception e) {
 			System.out.println("Excepcion: " + e.getMessage());
 		}
-		System.out.println(s.traerProducto(2));
+		System.out.println(s.traerProducto(0));
 
 		try {
 			System.out.println((2));
