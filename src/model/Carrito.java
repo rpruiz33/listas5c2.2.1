@@ -97,10 +97,15 @@ public boolean eliminarItem(Producto producto, int cantidad)throws Exception  {
 		i++;			
 		}
 	if(!flag) {
-		throw new Exception("el producto no ya existe");
+		throw new Exception("el producto  ya no existe");
 		}else {
 		return flag;
 		}
 	
 }
+public boolean equals(Carrito c) {
+	return c.getIdCarrito()== idCarrito && lstItem.equals(c.getLstItem());
+}
+
+
 }

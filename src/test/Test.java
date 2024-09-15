@@ -13,7 +13,7 @@ public class Test {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Supermercado s = new Supermercado();
+		Supermercado s = new Supermercado(null, null, null);
 		Producto p = new Producto(1, "cafe", 23.2f);
 		ItemCarrito i = new ItemCarrito(1, p, 22);
 		Carrito c = new Carrito(1, LocalDate.of(2222, 02, 02), LocalTime.of(12, 12));
