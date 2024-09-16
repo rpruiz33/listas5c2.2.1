@@ -5,6 +5,7 @@ import java.time.LocalTime;
 import java.util.List;
 
 import model.Carrito;
+import model.Cliente;
 import model.ItemCarrito;
 import model.Producto;
 import model.Supermercado;
@@ -15,10 +16,10 @@ public class Test {
 		// TODO Auto-generated method stu
 		
 		Supermercado s = new Supermercado();
-		
+		Cliente c1= new Cliente(1, "rober", 12121212, "calle unla");
 		Producto p = new Producto(1, "cafe", 23.2f);
 		ItemCarrito i = new ItemCarrito(1, p, 22);
-		Carrito c = new Carrito(1, LocalDate.of(2222, 02, 02), LocalTime.of(12, 12));
+		Carrito c = new Carrito(1, LocalDate.of(2222, 02, 02), LocalTime.of(12, 12),c1);
 		System.out.println(c.agregarItem(p, 1));
 		System.out.println(c.agregarItem(p, 1));
 		System.out.println("\ntamanio de gondola"+s.getGondola());
